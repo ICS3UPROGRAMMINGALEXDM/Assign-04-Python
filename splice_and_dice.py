@@ -68,7 +68,7 @@ def main():
                 if (copies < 1) or (size < 1) or (size > len(charArr)):
                     print(
                         "Make sure copies and size are greater than 0. AND that "
-                        + "size is NOT greater than the amout of characters in the"
+                        + "size is NOT greater than the amount of characters in the"
                         + " word/phrase"
                     )
                 else:
