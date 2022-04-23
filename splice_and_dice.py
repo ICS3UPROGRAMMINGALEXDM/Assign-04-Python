@@ -7,7 +7,8 @@
 # The program will then loop through according to the users "order" and display
 # The final string.
 import colorama
-from colorama import Style, Fore
+from colorama import Fore, Style
+
 
 # function is used to split at each character, then input into an array.
 # takes the argument string
