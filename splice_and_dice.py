@@ -26,7 +26,7 @@ def looping():
     for number in range(copies):
 
         for number in range(size):
-            new_string = new_string + charArr[counter]
+            new_string = new_string + char_arr[counter]
             counter += 1
         # final_string is the string that will be displayed to the user
         final_string = final_string + new_string
@@ -38,20 +38,20 @@ def looping():
 
 
 def main():
-    restartLoop = True
+    restart_loop = True
 
-    while restartLoop:
-        answerLoop = True
-        errorLoop = True
+    while restart_loop:
+        answer_loop = True
+        error_loop = True
 
         u_string = input(
             Style.BRIGHT + Fore.WHITE + "Enter a word or phrase to be Splice&Diced: "
         )
         # This calls the function that will
-        global charArr
-        charArr = split_string(u_string)
+        global char_arr
+        char_arr = split_string(u_string)
         # Loop is here so that the user can re-enter the parameters if they were invalid
-        while errorLoop:
+        while error_loop:
             u_size = input(
                 Fore.WHITE
                 + "Enter how many characters long you want the Splice&Diced word to be: "
@@ -65,28 +65,28 @@ def main():
                 size = int(u_size)
                 global copies
                 copies = int(u_copies)
-                if (copies < 1) or (size < 1) or (size > len(charArr)):
+                if (copies < 1) or (size < 1) or (size > len(char_arr)):
                     print(
                         "Make sure copies and size are greater than 0. AND that "
                         + "size is NOT greater than the amount of characters in the"
                         + " word/phrase"
                     )
                 else:
-                    errorLoop = False
+                    error_loop = False
                     # Calls function to create the final string
                     looping()
                     # Used to ask user if they would like to restart program
-                    while answerLoop:
+                    while answer_loop:
                         answer = input(
                             Fore.WHITE
                             + "\nWould you like to Splice&Dice another word? (y/n): "
                         )
 
                         if answer == "y":
-                            answerLoop = False
+                            answer_loop = False
                         elif answer == "n":
-                            answerLoop = False
-                            restartLoop = False
+                            answer_loop = False
+                            restart_loop = False
                         else:
                             print("I don't understand, please try again.")
 
@@ -94,7 +94,7 @@ def main():
                 print(
                     Fore.RED
                     + "Please ensure that the size and number of"
-                    + " copies entered is a valid number"
+                    + " copies entered is a valid integer"
                 )
 
 
